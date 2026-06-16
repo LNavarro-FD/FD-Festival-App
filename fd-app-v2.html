@@ -320,16 +320,6 @@ select:focus{border-color:var(--pink);}
 <!-- HOME -->
 <div id="screen-home" class="screen page-scroll" style="display:flex;">
 
-  <!-- Now Playing bar -->
-  <div class="home-np pulse" onclick="switchTab('djs')">
-    <div style="font-size:26px;animation:spin 3s linear infinite;">🎵</div>
-    <div style="flex:1;">
-      <div style="font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;opacity:.85;">Now Playing · Ladies Day</div>
-      <div style="font-size:15px;font-weight:900;">Ronnie Herel</div>
-    </div>
-    <div style="font-size:12px;font-weight:700;opacity:.8;">Line-Up ›</div>
-  </div>
-
   <div class="home-grid">
     <button class="home-tile pink home-tile-wide" onclick="switchTab('tickets')">
       <div class="home-tile-icon">🎟️</div>
@@ -914,7 +904,7 @@ select:focus{border-color:var(--pink);}
 
 <nav class="bottom-nav">
   <button class="nav-btn active" id="nav-home" onclick="switchTab('home')"><span class="nav-icon">🏠</span>Home</button>
-  <button class="nav-btn" id="nav-tickets" onclick="switchTab('tickets')"><span class="nav-icon">🎟️</span>Tickets</button>
+  <button class="nav-btn" id="nav-tickets" onclick="switchTab('tickets')"><span class="nav-icon">🎟️</span>My Tickets</button>
   <button class="nav-btn" id="nav-djs" onclick="switchTab('djs')"><span class="nav-icon">🎧</span>Line-Up</button>
   <button class="nav-btn" id="nav-chat" onclick="switchTab('chat')"><span class="nav-icon">💬</span>Chat</button>
   <button class="nav-btn" id="nav-safety" onclick="switchTab('safety')"><span class="nav-icon">🛡️</span>Safety</button>

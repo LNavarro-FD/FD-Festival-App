@@ -3,6 +3,10 @@
   "active": true,
   "type": "info",
   "icon": "🎤",
-  "message": "Give me all the App changes today 🎉",
-  "time": "Posted 19:00"
+  "message": "Welcome to Funky Dory at Henley Regatta 2026! Gates open at 12pm. Enjoy the show! 🎉",
+  "time": "Posted 12:00pm",
+  "config": {
+    "siteUrl": "https://fd.tdwdev.co.uk",
+    "mecKey": "YOUR_MEC_KEY_HERE"
+  }
 }

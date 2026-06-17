@@ -188,7 +188,7 @@ select:focus{border-color:var(--pink);}
 .chat-send{width:40px;height:40px;background:var(--pink);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;-webkit-tap-highlight-color:transparent;flex-shrink:0;}
 
 /* SAFETY */
-.safety-hero{background:linear-gradient(135deg,#1a0a20 0%,var(--navy) 100%);padding:24px 18px;border-radius:14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;}
+.safety-hero{background:linear-gradient(135deg,var(--navy) 0%,#1a0a20 100%);padding:24px 18px;border-radius:14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;}
 .safety-title{font-size:18px;font-weight:900;color:#fff;}
 .safety-sub{font-size:13px;color:rgba(255,255,255,.6);line-height:1.5;}
 .sos-btn{background:#D0000A;color:#fff;border:none;border-radius:50%;width:76px;height:76px;font-size:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;-webkit-tap-highlight-color:transparent;box-shadow:0 0 0 8px rgba(208,0,10,.2);margin:4px 0;font-family:inherit;}
@@ -405,7 +405,7 @@ select:focus{border-color:var(--pink);}
     <div class="section-hdr">Your Tickets</div>
 
     <div class="ticket-card">
-      <div class="ticket-card-top">
+      <div class="ticket-card-top" style="background:linear-gradient(135deg,#207AAF,#20A5DE);">
         <div class="ticket-card-event">Funky Dory · Henley Regatta 2026</div>
         <div class="ticket-card-name">Ladies Day — Thu 2 Jul</div>
         <div class="ticket-card-type">VIP Ladies Day · Early Bird</div>
@@ -1116,7 +1116,7 @@ const FOOD_MENUS = {
 let currentUser = null;
 let currentDay = 'thu';
 const TABS = ['events','tickets','djs','comps','food','bar','retail','sponsors','future-events','chat','instagram','getting-there','safety'];
-const DAY_COLORS = {thu:'linear-gradient(135deg,#3A0060,#C0004A)',fri:'linear-gradient(135deg,#22224C,#003888)',sat:'linear-gradient(135deg,#1a0a00,#8A4000)'};
+const DAY_COLORS = {thu:'linear-gradient(135deg,#207AAF,#20A5DE)',fri:'linear-gradient(135deg,#AC433B,#F05332)',sat:'linear-gradient(135deg,#AB326C,#EE3B7A)'};
 
 function doLogin(){
   const email = document.getElementById('login-email').value.trim();

@@ -225,6 +225,18 @@ select:focus{border-color:var(--pink);}
 @keyframes pulse-pink{0%,100%{box-shadow:0 0 0 0 rgba(255,75,123,.4)}50%{box-shadow:0 0 0 10px rgba(255,75,123,0)}}
 .anims-paused .pulse,.anims-paused .np-icon{animation-play-state:paused!important;}
 
+/* Pull to refresh */
+#ptr-indicator{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;align-items:center;justify-content:center;
+  height:0;overflow:hidden;background:var(--navy);
+  transition:height .2s;
+}
+#ptr-indicator.visible{height:48px;}
+#ptr-indicator.ready{background:var(--pink);}
+.ptr-text{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;opacity:0;transition:opacity .15s;}
+#ptr-indicator.visible .ptr-text{opacity:1;}
+
 /* Announcements */
 #announcement-bar{
   flex-shrink:0;overflow:hidden;max-height:0;transition:max-height .3s ease;
@@ -245,6 +257,7 @@ select:focus{border-color:var(--pink);}
 </style>
 </head>
 <body>
+<div id="ptr-indicator"><span class="ptr-text" id="ptr-text">↓ Pull to refresh</span></div>
 <div id="ios-install-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:400;background:var(--navy);color:#fff;padding:14px 16px;border-top:2px solid var(--pink);align-items:center;gap:12px;">
   <div style="flex:1;">
     <div style="font-size:13px;font-weight:900;">Add to Home Screen</div>

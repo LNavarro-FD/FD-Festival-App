@@ -1442,13 +1442,7 @@ function logOut() {
   }
 })();
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js')
-      .then(reg => console.log('SW registered:', reg.scope))
-      .catch(err => console.log('SW failed:', err));
-  });
-}
+// Service worker: enabled when hosted on custom domain
 </script>
 </body>
 </html>

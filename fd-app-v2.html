@@ -922,7 +922,7 @@ select:focus{border-color:var(--pink);}
     <button class="nav-btn" id="nav-djs" onclick="switchTab('djs')"><span class="nav-icon">🎧</span>Line-Up</button>
     <button class="nav-btn" id="nav-comps" onclick="switchTab('comps')"><span class="nav-icon">🏆</span>Win</button>
     <button class="nav-btn" id="nav-chat" onclick="switchTab('chat')"><span class="nav-icon">💬</span>Chat</button>
-    <button class="nav-btn" id="nav-safety" onclick="switchTab('safety')"><span class="nav-icon">🛡️</span>Safety</button>
+    <button class="nav-btn" id="nav-instagram" onclick="switchTab('instagram')"><span class="nav-icon">📸</span>Photos</button>
   </div>
   <!-- Row 2: Secondary -->
   <div style="display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;-webkit-scrollbar-display:none;">
@@ -931,8 +931,7 @@ select:focus{border-color:var(--pink);}
     <button class="nav-btn" id="nav-retail" onclick="switchTab('retail')"><span class="nav-icon">🛍️</span>Shop</button>
     <button class="nav-btn" id="nav-sponsors" onclick="switchTab('sponsors')"><span class="nav-icon">🤝</span>Sponsors</button>
     <button class="nav-btn" id="nav-future-events" onclick="switchTab('future-events')"><span class="nav-icon">✨</span>Future Events</button>
-    <button class="nav-btn" id="nav-instagram" onclick="switchTab('instagram')"><span class="nav-icon">📸</span>Photos</button>
-    <button class="nav-btn" id="nav-getting-there" onclick="switchTab('getting-there')"><span class="nav-icon">🗺️</span>Getting Here</button>
+    <button class="nav-btn" id="nav-safety" onclick="switchTab('safety')"><span class="nav-icon">🛡️</span>Safety</button>
   </div>
 </nav>
 </div><!-- /main-app -->
@@ -1125,7 +1124,7 @@ const FOOD_MENUS = {
 
 let currentUser = null;
 let currentDay = 'thu';
-const TABS = ['events','tickets','djs','comps','food','bar','retail','sponsors','future-events','chat','instagram','getting-there','safety'];
+const TABS = ['events','tickets','djs','comps','food','bar','retail','sponsors','future-events','chat','instagram','safety'];
 const DAY_COLORS = {thu:'linear-gradient(135deg,#207AAF,#20A5DE)',fri:'linear-gradient(135deg,#AC433B,#F05332)',sat:'linear-gradient(135deg,#AB326C,#EE3B7A)'};
 
 function doLogin(){
@@ -1429,6 +1428,64 @@ function dismissAnnouncement() {
 // Check on load and every 60 seconds
 fetchAnnouncement();
 setInterval(fetchAnnouncement, 5000); // check every 5 seconds
+
+// ── Pull to Refresh ──
+(function() {
+  let startY = 0;
+  let pulling = false;
+  let active = false;
+  const threshold = 80;
+
+  document.addEventListener('touchstart', e => {
+    const scrollEl = document.querySelector('.page-scroll:not(.hidden)');
+    const scrollTop = scrollEl ? scrollEl.scrollTop : window.scrollY;
+    if (scrollTop === 0) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+      active = false;
+    }
+  }, { passive: true });
+
+  document.addEventListener('touchmove', e => {
+    if (!pulling) return;
+    const dist = e.touches[0].clientY - startY;
+    if (dist > 10) {
+      const ind = document.getElementById('ptr-indicator');
+      const txt = document.getElementById('ptr-text');
+      ind.classList.add('visible');
+      if (dist > threshold) {
+        ind.classList.add('ready');
+        txt.textContent = '↑ Release to refresh';
+        active = true;
+      } else {
+        ind.classList.remove('ready');
+        txt.textContent = '↓ Pull to refresh';
+        active = false;
+      }
+    }
+  }, { passive: true });
+
+  document.addEventListener('touchend', e => {
+    if (!pulling) return;
+    pulling = false;
+    const ind = document.getElementById('ptr-indicator');
+    ind.classList.remove('visible');
+    ind.classList.remove('ready');
+    if (active) {
+      document.getElementById('ptr-text').textContent = '⟳ Refreshing…';
+      ind.classList.add('visible');
+      // Cache-busting reload — works in PWA standalone mode
+      setTimeout(() => {
+        window.location.href = window.location.pathname + '?r=' + Date.now();
+      }, 200);
+    }
+  }, { passive: true });
+
+  // Also fetch fresh announcement when app comes to foreground
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) fetchAnnouncement();
+  });
+})();
 
 // ── Pause CSS animations when tab/app not visible (battery saving) ──
 document.addEventListener('visibilitychange', function() {

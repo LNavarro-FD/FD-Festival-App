@@ -279,7 +279,7 @@ select:focus{border-color:var(--pink);}
       <input type="email" id="login-email" placeholder="you@example.com" autocomplete="email" autocapitalize="none">
     </div>
     <div>
-      <label class="field-label">First 3 or 4 letters of postcode</label>
+      <label class="field-label">Postcode / ZIP Code (first 3–4 characters)</label>
       <input type="text" id="login-postcode" placeholder="e.g. RG9" maxlength="4" autocapitalize="characters" style="text-transform:uppercase;">
     </div>
     <div>
@@ -706,7 +706,7 @@ select:focus{border-color:var(--pink);}
         <div><div class="sponsor-name">Qlvr</div><div class="sponsor-tier">👗 Contemporary Fashion</div></div>
       </div>
       <div class="sponsor-desc">Women's athletic footwear actually designed for women — radical, right? Qlvr's clever laceless system delivers superior fit and performance, because you deserve better than wearing small men's shoes. Find them on-site.</div>
-      <a href="#" class="sponsor-link" onclick="showToast('📍','Find Qlvr in the retail village!');return false;">Find them on-site ↗</a>
+      <a href="#" class="sponsor-link" href="https://qlvr.com" target="_blank">Visit qlvr.com ↗</a>
     </div>
 
     <div class="sponsor-card">
@@ -715,7 +715,7 @@ select:focus{border-color:var(--pink);}
         <div><div class="sponsor-name">Sparkles Every Day Jewellery</div><div class="sponsor-tier">💎 Handcrafted Jewellery</div></div>
       </div>
       <div class="sponsor-desc">Beautiful jewellery designed to be worn every day, not just for special occasions. From delicate everyday pieces to statement festival looks, Sparkles Every Day brings the sparkle whatever the occasion. They also offer permanent jewellery — welded directly onto your wrist or ankle with no clasp, so it stays with you forever. The perfect festival keepsake.</div>
-      <a href="#" class="sponsor-link" onclick="showToast('📍','Find Sparkles Every Day Jewellery on-site!');return false;">Find them on-site ↗</a>
+      <a href="#" class="sponsor-link" href="https://www.sparkleseverydayjewellery.com" target="_blank">Visit sparkleseverydayjewellery.com ↗</a>
     </div>
 
     <div class="sponsor-card">
@@ -733,7 +733,11 @@ select:focus{border-color:var(--pink);}
 <!-- CHAT -->
 <div id="screen-chat" class="screen hidden" style="display:none;flex-direction:column;">
   <div style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;background:var(--bg);padding:12px 12px 6px;" id="chat-messages">
-    <div style="margin-bottom:10px;"><div class="chat-perm-banner"><div class="chat-perm-icon">💬</div><div><div class="chat-perm-title">Who's Here This Weekend?</div><div class="chat-perm-body">Chat with other festival-goers. Be kind, be fun. Your display name is your first name only.</div></div></div></div>
+    <div style="margin-bottom:10px;"><div class="chat-perm-banner"><div class="chat-perm-icon">💬</div><div><div class="chat-perm-title">Who's Here This Weekend?</div><div class="chat-perm-body">Chat with other festival-goers. Be kind, be fun. Your display name is your first name only.</div></div></div>
+    <div style="background:var(--pink);border-radius:10px;padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;gap:10px;">
+      <div style="font-size:20px;">🚀</div>
+      <div style="font-size:13px;font-weight:800;color:#fff;">Live chat coming soon — watch this space!</div>
+    </div></div>
     <div style="font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);text-align:center;margin:8px 0;">Thu 2 Jul · Ladies Day</div>
     <div class="msg-row"><div class="msg-av">S</div><div><div class="msg-bubble">Kate Garraway just walked on!! 🤩🤩</div><div class="msg-time">Sophie · 2:32pm</div></div></div>
     <div class="msg-row"><div class="msg-av">J</div><div><div class="msg-bubble">Ronnie Herel's set is unreal right now 🎵🎵</div><div class="msg-time">James · 3:15pm</div></div></div>
@@ -742,8 +746,8 @@ select:focus{border-color:var(--pink);}
     <div style="height:6px;"></div>
   </div>
   <div class="chat-input-bar">
-    <input class="chat-input" type="text" id="chat-input" placeholder="Say something…" onkeydown="if(event.key==='Enter')sendChatMsg()">
-    <button class="chat-send" onclick="sendChatMsg()">➤</button>
+    <input class="chat-input" type="text" id="chat-input" placeholder="Say something…" onkeydown="" readonly>
+    <button class="chat-send" onclick="showToast('💬','Live chat coming soon!');" style="background:var(--muted);">➤</button>
   </div>
 </div>
 
@@ -1133,7 +1137,7 @@ function doLogin(){
   const age = document.getElementById('login-age').value;
   const err = document.getElementById('login-err');
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showErr('Please enter a valid email address.');return;}
-  if(!/^[A-Z]{1,2}\d{1,2}$/.test(pc)||pc.length<2){showErr('Enter the first 3–4 characters of your postcode (e.g. RG9, SW1A).');return;}
+  if(pc.length < 2){showErr('Please enter at least 2 characters of your postcode or ZIP code.');return;}
   if(!age){showErr('Please select your age range.');return;}
   err.style.display='none';
   currentUser={email,pc,age};

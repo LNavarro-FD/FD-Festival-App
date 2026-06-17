@@ -404,7 +404,7 @@ select:focus{border-color:var(--pink);}
 <!-- MY TICKETS -->
 <div id="screen-tickets" class="screen page-scroll hidden">
   <div class="section-inner">
-    <div class="info-banner">🎟️ Only tickets booked with <strong id="ticket-email-display">your email</strong> appear here. If you booked separately, contact hello@funkydorylove.co.uk</div>
+    <div id="ticket-email-display" style="display:none;"></div>
     <div class="section-hdr">Your Tickets</div>
 
     <div class="ticket-card">
@@ -458,19 +458,44 @@ select:focus{border-color:var(--pink);}
     <div class="sponsor-card">
       <div class="sponsor-header">
         <div class="sponsor-logo" style="background:linear-gradient(135deg,#8B0000,#FF6036);">🍝</div>
-        <div><div class="sponsor-name">Chi Chi & the Pasta</div><div class="sponsor-tier">Fresh pasta · Italian street food</div></div>
+        <div><div class="sponsor-name">Chi Chi & the Pasta Family</div><div class="sponsor-tier">Authentic handmade Italian pasta</div></div>
       </div>
-      <div class="sponsor-desc">Handmade fresh pasta, rich sauces and Italian soul food — made with love on-site. One of our longest-standing festival partners and a firm crowd favourite.</div>
-      <a href="#" class="sponsor-link" onclick="showToast('📍','Find Chi Chi in the food village!');return false;">Find them on-site ↗</a>
+      <div class="sponsor-desc">Fresh pasta made every morning following traditional Italian recipes, using carefully sourced ingredients. Francesco and the team bring their signature pasta van to Henley — find them in the food village and prepare to be mesmerised.</div>
+      <div style="padding:0 14px 14px;">
+        <div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">🍝 Menu</div>
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Irene's Pomodoro Rigatoni</div><div class="menu-item-desc">Homemade fresh tomato sauce with olive oil</div><div class="menu-item-tags"><span class="menu-tag v">Vegan</span></div></div></div>
+          <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Four Cheese Rigatoni</div><div class="menu-item-desc">Taleggio, gorgonzola, scamorza & parmesan</div></div></div>
+          <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Pesto Genovese Rigatoni</div><div class="menu-item-desc">Basil, olive oil, pine nuts, parmesan & pecorino romano DOP</div></div></div>
+          <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Mushroom & Cream Pappardelle</div><div class="menu-item-desc">Portobello mushroom and double cream sauce</div></div></div>
+          <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Beef Ragù Rigatoni</div><div class="menu-item-desc">Slow cooked beef sauce</div></div></div>
+          <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Tuscan Sausage Rigatoni</div><div class="menu-item-desc">Tuscan sausage, tomato & rosemary</div></div></div>
+          <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Spinach & Ricotta Ravioli</div><div class="menu-item-desc">With tomato sauce, spinach, basil & parmesan</div></div></div>
+          <div class="menu-item" style="border-bottom:none;"><div class="menu-item-info"><div class="menu-item-name">Ricotta Ravioli with Truffle Sauce</div><div class="menu-item-desc">Truffle cream sauce — a real treat</div></div></div>
+        </div>
+        <div style="background:linear-gradient(90deg,var(--pink),#FF6036);border-radius:8px;padding:10px 12px;margin-top:10px;color:#fff;font-size:12px;font-weight:800;text-align:center;">🍮 Don't miss the homemade Tiramisù!</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:8px;text-align:center;">All pasta available Regular or Large · Allergen guide at the stall</div>
+      </div>
+      <a href="https://chichipasta.com" target="_blank" class="sponsor-link">Visit chichipasta.com ↗</a>
     </div>
 
     <div class="sponsor-card">
       <div class="sponsor-header">
         <div class="sponsor-logo" style="background:linear-gradient(135deg,#FF6B35,#F7C59F);">🍛</div>
-        <div><div class="sponsor-name">Mr. Bombay</div><div class="sponsor-tier">Indian street food · Bold flavours</div></div>
+        <div><div class="sponsor-name">Mr. Bombay</div><div class="sponsor-tier">Clean · Honest · Authentic Indian street food</div></div>
       </div>
-      <div class="sponsor-desc">Bold Indian street food with punchy flavours and proper spice. Mr. Bombay brings the Mumbai street experience to the Henley riverside.</div>
-      <a href="#" class="sponsor-link" onclick="showToast('📍','Find Mr. Bombay in the food village!');return false;">Find them on-site ↗</a>
+      <div class="sponsor-desc">A family food business since 1979, husband and wife team Rikki and Rakhi bring authentic Bombay street food to Henley. Think retro Bollywood vibes, sizzling tandoori chicken, masala paneer naan wraps, karahi chicken, tadka dahl, fresh salads, raitas and chutneys. Real Indian food, done properly.</div>
+      <div style="padding:0 14px 14px;">
+        <div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">🍽️ Signatures</div>
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Tandoori Chicken Naan Wrap</div><div class="menu-item-desc">Sizzling tandoori chicken in a freshly baked naan with chutneys & raita</div></div></div>
+          <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Masala Paneer Naan Wrap</div><div class="menu-item-desc">Spiced paneer in a naan with fresh salad & mint chutney</div><div class="menu-item-tags"><span class="menu-tag v">Vegetarian</span></div></div></div>
+          <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Karahi Chicken</div><div class="menu-item-desc">Classic wok-cooked chicken in fragrant spiced sauce</div></div></div>
+          <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Tadka Dahl</div><div class="menu-item-desc">Slow-cooked lentils tempered with spiced butter</div><div class="menu-item-tags"><span class="menu-tag v">Vegan</span></div></div></div>
+          <div class="menu-item" style="border-bottom:none;"><div class="menu-item-info"><div class="menu-item-name">Salads, Raitas & Chutneys</div><div class="menu-item-desc">Fresh sides to complement your main</div></div></div>
+        </div>
+      </div>
+      <a href="https://mrbombay.co.uk" target="_blank" class="sponsor-link">Visit mrbombay.co.uk ↗</a>
     </div>
 
     <div class="sponsor-card">
@@ -484,11 +509,22 @@ select:focus{border-color:var(--pink);}
 
     <div class="sponsor-card">
       <div class="sponsor-header">
-        <div class="sponsor-logo" style="background:linear-gradient(135deg,#2d6a4f,#52b788);">🌿</div>
-        <div><div class="sponsor-name">Lodo Land</div><div class="sponsor-tier">Global flavours · Plant-based friendly</div></div>
+        <div class="sponsor-logo" style="background:linear-gradient(135deg,#2d6a4f,#52b788);">🍦</div>
+        <div><div class="sponsor-name">Lodoland</div><div class="sponsor-tier">Paradise for food lovers · Sweet & savoury</div></div>
       </div>
-      <div class="sponsor-desc">Fresh, vibrant food with global influences. Lodo Land brings colour and creativity to the festival plate — great options for everyone, including plant-based.</div>
-      <a href="#" class="sponsor-link" onclick="showToast('📍','Find Lodo Land in the food village!');return false;">Find them on-site ↗</a>
+      <div class="sponsor-desc">Twisted ice cream, waffles, crêpes and the unmissable Don-Ice — a donut with ice cream inside. Lodoland uses fresh, quality ingredients to create something truly unique. Founded by Kamila, this is festival food with imagination.</div>
+      <div style="padding:0 14px 14px;">
+        <div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">🍦 Menu</div>
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Twisted Ice Cream</div><div class="menu-item-desc">Unique dense & creamy texture, stays cold longer — ask for today's flavours</div><div class="menu-item-tags"><span class="menu-tag v">Vegetarian</span></div></div><div style="text-align:right"><div class="menu-price">£3</div><div style="font-size:11px;color:var(--muted);">Med £4 · Lg £5</div></div></div>
+          <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Don-Ice</div><div class="menu-item-desc">Donut with ice cream inside 🍩🍦</div></div><div class="menu-price">£5</div></div>
+          <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Sweet Waffles</div><div class="menu-item-desc">Nutella, strawberry, banana & salted caramel, or make your own</div></div><div style="text-align:right"><div class="menu-price">from £6</div></div></div>
+          <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Savoury Waffles</div><div class="menu-item-desc">Avocado & halloumi, egg & mushroom, chicken, salmon & cream cheese or make your own</div></div><div style="text-align:right"><div class="menu-price">from £8</div></div></div>
+          <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Sweet Crêpes</div><div class="menu-item-desc">Nutella, strawberry, banana, marshmallow or salted caramel</div></div><div style="text-align:right"><div class="menu-price">from £6</div></div></div>
+          <div class="menu-item" style="border-bottom:none;"><div class="menu-item-info"><div class="menu-item-name">Savoury Crêpes</div><div class="menu-item-desc">Mushroom & cheese, ham & cheese, chicken, spinach or make your own</div></div><div style="text-align:right"><div class="menu-price">from £7</div></div></div>
+        </div>
+      </div>
+      <a href="https://lodoland.co.uk" target="_blank" class="sponsor-link">Visit lodoland.co.uk ↗</a>
     </div>
 
     <div class="section-hdr">Dietary filters</div>
@@ -688,7 +724,7 @@ select:focus{border-color:var(--pink);}
         <div><div class="sponsor-name">Olives Boutique</div><div class="sponsor-tier">👗 Fashion Boutique</div></div>
       </div>
       <div class="sponsor-desc">Founded by mother and daughter Elaine and Lily, Olives is a family-run, all-female boutique bringing carefully curated fashion for women of all ages. Expect quality brands, individual style and a warm personal touch — straight from the heart of Essex to the Henley riverside.</div>
-      <a href="https://www.olivesboutique.co.uk" target="_blank" class="sponsor-link">Visit olivesboutique.co.uk ↗</a>
+      <a href="#" class="sponsor-link" onclick="showToast('📍','Find Olives Boutique on-site!');return false;">Find them on-site ↗</a>
     </div>
 
   </div>
@@ -747,7 +783,7 @@ select:focus{border-color:var(--pink);}
         <a href="https://www.instagram.com/funkydorylove/" target="_blank" style="background:linear-gradient(135deg,#833AB4,#FD1D1D);color:#fff;border-radius:10px;padding:12px;text-align:center;font-size:12px;font-weight:800;text-decoration:none;display:block;">📷 Instagram</a>
         <a href="https://www.facebook.com/funkydorylove" target="_blank" style="background:#1877F2;color:#fff;border-radius:10px;padding:12px;text-align:center;font-size:12px;font-weight:800;text-decoration:none;display:block;">👍 Facebook</a>
         <a href="https://www.tiktok.com/@funkydorylove" target="_blank" style="background:#000;color:#fff;border-radius:10px;padding:12px;text-align:center;font-size:12px;font-weight:800;text-decoration:none;display:block;">🎵 TikTok</a>
-        <a href="https://twitter.com/funkydorylove" target="_blank" style="background:#1DA1F2;color:#fff;border-radius:10px;padding:12px;text-align:center;font-size:12px;font-weight:800;text-decoration:none;display:block;">🐦 Twitter/X</a>
+
       </div>
     </div>
 

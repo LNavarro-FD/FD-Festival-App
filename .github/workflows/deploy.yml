@@ -22,3 +22,6 @@ jobs:
           port: 8418
           source: "."
           target: "/app/"
+          timeout: 60s
+          command_timeout: 10m
+          use_insecure_cipher: true

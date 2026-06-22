@@ -1,0 +1,28 @@
+name: Deploy FD Festival App to LIVE Site
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-live:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build live version
+        run: |
+          sed -i 's/const IS_LIVE = false;/const IS_LIVE = true;/' fd-app-v2.html
+          sed -i "s/formData.append('form_id', '21')/formData.append('form_id', '19')/" fd-app-v2.html
+
+      - name: Deploy via FTPS to live site
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.LIVE_FTP_SERVER }}
+          username: ${{ secrets.LIVE_FTP_USERNAME }}
+          password: ${{ secrets.LIVE_FTP_PASSWORD }}
+          port: ${{ secrets.LIVE_FTP_PORT }}
+          server-dir: /app/
+          protocol: ftps
+          security: loose

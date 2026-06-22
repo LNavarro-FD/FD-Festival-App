@@ -13,7 +13,7 @@ jobs:
 
       - name: Build live version
         run: |
-          sed -i 's/const IS_LIVE = false;/const IS_LIVE = true;/' fd-app-v2.html
+          sed -i 's/IS_LIVE = false/IS_LIVE = true/' fd-app-v2.html
           sed -i "s/formData.append('form_id', '21')/formData.append('form_id', '19')/" fd-app-v2.html
 
       - name: Deploy via FTPS to live site
@@ -27,3 +27,4 @@ jobs:
           protocol: ftps
           security: loose
           timeout: 60000
+          dangerous-clean-slate: true

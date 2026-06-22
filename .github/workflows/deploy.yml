@@ -21,6 +21,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
           local_path: './*'
-          remote_path: 'REPLACE_WITH_FOLDER_PATH'
+          remote_path: '/app/'
           sftp_only: true
           delete_remote_files: false

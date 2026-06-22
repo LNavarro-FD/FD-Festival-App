@@ -2,7 +2,8 @@
   "id": "1782146918885",
   "active": true,
   "type": "info",
-  "icon": "☀️",
+  "icon": "\u2600\ufe0f",
   "message": "Less than 10 days to go and the weather is looking fantastic. We are so excited to welcome you into the Funky Dory experience during Henley Royal Regatta",
-  "time": "Posted 18:06"
+  "time": "Posted 18:06",
+  "chat_enabled": true
 }

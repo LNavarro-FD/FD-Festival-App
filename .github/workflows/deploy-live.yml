@@ -26,3 +26,5 @@ jobs:
           server-dir: /app/
           protocol: ftps
           security: loose
+          timeout: 60000
+          dangerous-clean-slate: false

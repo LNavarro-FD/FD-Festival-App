@@ -13,15 +13,13 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Deploy via SFTP
-        uses: appleboy/scp-action@v0.1.7
+      - name: Deploy via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          host: ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 8418
-          source: "."
-          target: "/app/"
-          timeout: 60s
-          command_timeout: 10m
-          use_insecure_cipher: true
+          server-dir: /app/
+          protocol: ftps
+          security: loose

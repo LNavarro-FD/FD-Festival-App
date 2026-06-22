@@ -1,12 +1,8 @@
 {
-  "id": "test-001",
+  "id": "1782146918884",
   "active": true,
   "type": "info",
-  "icon": "🎤",
-  "message": "Welcome to Funky Dory at Henley Regatta 2026! Gates open at 12pm. Enjoy the show! 🎉",
-  "time": "Posted 12:00pm",
-  "config": {
-    "siteUrl": "https://fd.tdwdev.co.uk",
-    "mecKey": "YOUR_MEC_KEY_HERE"
-  }
+  "icon": "☀️",
+  "message": "Less than 10 days to go and weather is looking fantastic. We are so excited to welcome you into the Funky Dory experience during Henley Royal Regatta",
+  "time": "Posted 17:51"
 }

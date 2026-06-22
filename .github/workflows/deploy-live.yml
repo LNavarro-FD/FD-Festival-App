@@ -17,14 +17,3 @@ jobs:
           sed -i "s/formData.append('form_id', '21')/formData.append('form_id', '19')/" fd-app-v2.html
 
       - name: Deploy via FTPS to live site
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.LIVE_FTP_SERVER }}
-          username: ${{ secrets.LIVE_FTP_USERNAME }}
-          password: ${{ secrets.LIVE_FTP_PASSWORD }}
-          port: ${{ secrets.LIVE_FTP_PORT }}
-          server-dir: /app/
-          protocol: ftps
-          security: loose
-          timeout: 60000
-          dangerous-clean-slate: false

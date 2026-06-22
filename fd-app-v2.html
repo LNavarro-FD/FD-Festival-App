@@ -1148,7 +1148,33 @@ function doLogin(){
   currentUser={email,pc,age};
   // Save to localStorage so they don't have to log in every time
   try { localStorage.setItem('fd_user', JSON.stringify(currentUser)); } catch(e) {}
+  // Submit to Fluent Forms silently for data capture
+  submitToFluentForms(email, pc, age);
   launchApp();
+}
+
+async function submitToFluentForms(email, pc, age) {
+  try {
+    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+    const formData = new FormData();
+    formData.append('email', email);
+    formData.append('input_text', pc);
+    formData.append('dropdown', age);
+    formData.append('hidden', 'Henley Regatta 2026');
+    formData.append('hidden_3', 'Festival App');
+    formData.append('hidden_2', today);
+    formData.append('_fluentform_21_fluentformnonce', '');
+    formData.append('_wp_http_referer', '/');
+    formData.append('form_id', '21');
+
+    await fetch('https://fd.tdwdev.co.uk/wp-json/fluentform/v1/submission', {
+      method: 'POST',
+      body: formData,
+      mode: 'no-cors' // silent — we don't need the response
+    });
+  } catch(e) {
+    // Silent fail — never block the user logging in
+  }
 }
 
 function launchApp() {

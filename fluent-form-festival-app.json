@@ -1,0 +1,221 @@
+{
+  "title": "Festival App Registrations",
+  "form_fields": {
+    "fld_email": {
+      "index": 0,
+      "element": "input_email",
+      "attributes": {
+        "type": "email",
+        "name": "email",
+        "value": "",
+        "id": "fld_email",
+        "class": "fld_email",
+        "placeholder": "Email Address"
+      },
+      "settings": {
+        "container_class": "",
+        "label": "Email Address",
+        "admin_field_label": "Email Address",
+        "placeholder": "Email Address",
+        "is_unique": "no",
+        "help_message": "",
+        "visible_label": true,
+        "is_required": "yes",
+        "validation_rules": {
+          "required": {
+            "value": true,
+            "message": "Please enter your email address"
+          },
+          "email": {
+            "value": true,
+            "message": "Please enter a valid email address"
+          }
+        },
+        "conditional_logics": {}
+      },
+      "editor_options": {
+        "title": "Email Address",
+        "icon_class": "ff-edit-email"
+      }
+    },
+    "fld_postcode": {
+      "index": 1,
+      "element": "input_text",
+      "attributes": {
+        "type": "text",
+        "name": "postcode",
+        "value": "",
+        "id": "fld_postcode",
+        "class": "fld_postcode",
+        "placeholder": "Postcode / ZIP Code (first 3-4 characters)"
+      },
+      "settings": {
+        "container_class": "",
+        "label": "Postcode",
+        "admin_field_label": "Postcode",
+        "placeholder": "Postcode / ZIP Code (first 3-4 characters)",
+        "help_message": "",
+        "visible_label": true,
+        "is_required": "yes",
+        "validation_rules": {
+          "required": {
+            "value": true,
+            "message": "Please enter your postcode"
+          }
+        },
+        "conditional_logics": {}
+      },
+      "editor_options": {
+        "title": "Postcode",
+        "icon_class": "ff-edit-input"
+      }
+    },
+    "fld_age_range": {
+      "index": 2,
+      "element": "select",
+      "attributes": {
+        "name": "age_range",
+        "value": "",
+        "id": "fld_age_range",
+        "class": "fld_age_range"
+      },
+      "settings": {
+        "container_class": "",
+        "label": "Age Range",
+        "admin_field_label": "Age Range",
+        "placeholder": "Select your age range",
+        "help_message": "",
+        "visible_label": true,
+        "is_required": "yes",
+        "advanced_options": [
+          {
+            "label": "18-24",
+            "value": "18-24"
+          },
+          {
+            "label": "25-34",
+            "value": "25-34"
+          },
+          {
+            "label": "35-44",
+            "value": "35-44"
+          },
+          {
+            "label": "45-54",
+            "value": "45-54"
+          },
+          {
+            "label": "55-64",
+            "value": "55-64"
+          },
+          {
+            "label": "65+",
+            "value": "65+"
+          }
+        ],
+        "validation_rules": {
+          "required": {
+            "value": true,
+            "message": "Please select your age range"
+          }
+        },
+        "conditional_logics": {}
+      },
+      "editor_options": {
+        "title": "Age Range",
+        "icon_class": "ff-edit-select"
+      }
+    },
+    "fld_event": {
+      "index": 3,
+      "element": "hidden_field",
+      "attributes": {
+        "type": "hidden",
+        "name": "event",
+        "value": "Henley Regatta 2026",
+        "id": "fld_event",
+        "class": "fld_event"
+      },
+      "settings": {
+        "container_class": "",
+        "label": "Event",
+        "admin_field_label": "Event",
+        "help_message": "",
+        "validation_rules": {},
+        "conditional_logics": {}
+      },
+      "editor_options": {
+        "title": "Event",
+        "icon_class": "ff-edit-hidden"
+      }
+    },
+    "fld_source": {
+      "index": 4,
+      "element": "hidden_field",
+      "attributes": {
+        "type": "hidden",
+        "name": "source",
+        "value": "Festival App",
+        "id": "fld_source",
+        "class": "fld_source"
+      },
+      "settings": {
+        "container_class": "",
+        "label": "Source",
+        "admin_field_label": "Source",
+        "help_message": "",
+        "validation_rules": {},
+        "conditional_logics": {}
+      },
+      "editor_options": {
+        "title": "Source",
+        "icon_class": "ff-edit-hidden"
+      }
+    }
+  },
+  "submitButton": {
+    "uniqElKey": "el_submit",
+    "index": 5,
+    "element": "button",
+    "attributes": {
+      "type": "submit",
+      "class": "ff-btn ff-btn-submit"
+    },
+    "settings": {
+      "align": "left",
+      "button_style": "default",
+      "color": "",
+      "background_color": "",
+      "button_size": "md",
+      "container_class": "",
+      "help_message": "",
+      "conditional_logics": {}
+    },
+    "editor_options": {
+      "title": "Submit Button"
+    },
+    "btn_text": "Submit"
+  },
+  "formSettings": {
+    "confirmation": {
+      "redirectTo": "samePage",
+      "messageToShow": "Thank you for registering!",
+      "customUrl": "",
+      "samePageFormBehavior": "hide_form"
+    },
+    "restrictions": {
+      "limitNumberOfEntries": {
+        "enabled": "no"
+      },
+      "scheduleForm": {
+        "enabled": "no"
+      },
+      "requireLogin": {
+        "enabled": "no"
+      }
+    },
+    "layout": {
+      "asteriskPlacement": "asterisk-right"
+    }
+  }
+}

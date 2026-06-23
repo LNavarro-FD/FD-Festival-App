@@ -1,8 +1,9 @@
 {
-  "name": "Funky Dory — Henley Regatta 2026",
+  "name": "Funky Dory \u2014 Henley Regatta 2026",
   "short_name": "Funky Dory",
-  "description": "Your festival in your pocket — line-up, tickets, bar menu, food and more.",
-  "start_url": "/FD-Festival-App/fd-app-v2.html",
+  "description": "Your festival in your pocket \u2014 line-up, tickets, bar menu, food and more.",
+  "start_url": "/app/fd-app-v2.html",
+  "scope": "/app/",
   "display": "standalone",
   "background_color": "#22224C",
   "theme_color": "#22224C",

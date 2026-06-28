@@ -991,12 +991,12 @@ async function submitToFluentForms(email, pc, age) {
     formData.append('email', email);
     formData.append('input_text', pc);
     formData.append('dropdown', age);
-    formData.append('hidden', 'Henley Regatta 2026');
-    formData.append('hidden_3', 'Festival App');
+    formData.append('hidden', 'Festival 7.0 - 15 Aug 2026');
+    formData.append('hidden_3', 'Festival 7 App');
     formData.append('hidden_2', today);
-    formData.append('_fluentform_21_fluentformnonce', '');
+    formData.append('_fluentform_19_fluentformnonce', '');
     formData.append('_wp_http_referer', '/');
-    formData.append('form_id', '21');
+    formData.append('form_id', '19');
 
     await fetch(`${SITE_URL}/wp-json/fluentform/v1/submission`, {
       method: 'POST',
